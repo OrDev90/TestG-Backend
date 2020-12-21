@@ -10,85 +10,85 @@ import tests_generators.utils.UnifiedReportGenerator;
 
 public class Main {
 
-//    public static String generateTests(InputField generatedInputField) {
-//        try {
-//            /*
-//             * Add String and boolean to PatternGenerator.
-//             * Treat duplicates, against conditions, think of a logic to filter irrelevant/redundant results
-//             *  (A - 1, B - TRUE // A - 2, B - TRUE) - all in the CombinationGenerator only!
-//             * */
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            JSON_Handler json_handler = JSON_Handler.getInstance();
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-////            InputField inputField = json_handler.convertJSONToObject(
-////                    json_handler.get("http://localhost:8080/input_field/last").body());
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            PatternGenerator patternGenerator = new PatternGenerator();
-//
-//            CombinationGenerator combinationGenerator = new CombinationGenerator();
-//
-//            ConditionGenerator conditionGenerator = new ConditionGenerator();
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            UnifiedReportGenerator.getInstance().setProjectID(generatedInputField.getProjectId());
-//
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            UnifiedReportGenerator.getInstance().setProjectName(generatedInputField.getProjectName());
-//
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            patternGenerator.setInputField(generatedInputField).initTests();
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            combinationGenerator.setInputField(generatedInputField).initTests();
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            conditionGenerator.setInputField(generatedInputField).initTests();
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-////            UnifiedReportGenerator.getInstance().printAll();
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            OutputField outputField = UnifiedReportGenerator.getInstance().getOutputField();
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            String json = json_handler.convertObjectToJSON(outputField);
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            json_handler.post("http://localhost:8080/output_field", json);
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            int testsAmount = outputField.getTests().size();
-//            int projectId = outputField.getTests().get(0).getProjectId();
-//            json_handler.put("http://localhost:8080/projects/" + projectId + "/" + testsAmount);
-//
-////---------------------------------------------------------------------------------------------------------------------------------//
-//
-//            UnifiedReportGenerator.resetUnifiedReportGenerator();
-//
-//            return json;
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+    public static String generateTests(InputField generatedInputField) {
+        try {
+            /*
+             * Add String and boolean to PatternGenerator.
+             * Treat duplicates, against conditions, think of a logic to filter irrelevant/redundant results
+             *  (A - 1, B - TRUE // A - 2, B - TRUE) - all in the CombinationGenerator only!
+             * */
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            JSON_Handler json_handler = JSON_Handler.getInstance();
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+//            InputField inputField = json_handler.convertJSONToObject(
+//                    json_handler.get("http://localhost:8080/input_field/last").body());
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            PatternGenerator patternGenerator = new PatternGenerator();
+
+            CombinationGenerator combinationGenerator = new CombinationGenerator();
+
+            ConditionGenerator conditionGenerator = new ConditionGenerator();
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            UnifiedReportGenerator.getInstance().setProjectID(generatedInputField.getProjectId());
+
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            UnifiedReportGenerator.getInstance().setProjectName(generatedInputField.getProjectName());
+
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            patternGenerator.setInputField(generatedInputField).initTests();
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            combinationGenerator.setInputField(generatedInputField).initTests();
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            conditionGenerator.setInputField(generatedInputField).initTests();
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+//            UnifiedReportGenerator.getInstance().printAll();
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            OutputField outputField = UnifiedReportGenerator.getInstance().getOutputField();
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            String json = json_handler.convertObjectToJSON(outputField);
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            json_handler.post("http://localhost:8080/output_field", json);
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            int testsAmount = outputField.getTests().size();
+            int projectId = outputField.getTests().get(0).getProjectId();
+            json_handler.put("http://localhost:8080/projects/" + projectId + "/" + testsAmount);
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+            UnifiedReportGenerator.resetUnifiedReportGenerator();
+
+            return json;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 
 /*

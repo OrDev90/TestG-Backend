@@ -25,9 +25,7 @@ public class InputFieldController {
 
     @PostMapping
     public InputField createInputField(@RequestBody InputField inputField) {
-        InputField generatedInputField = this.inputFieldService.createInputField(inputField);
-        Main.generateTests(generatedInputField);
-        return generatedInputField;
+        return this.inputFieldService.createInputField(inputField);
     }
 
     @GetMapping(value = "/{id}")
